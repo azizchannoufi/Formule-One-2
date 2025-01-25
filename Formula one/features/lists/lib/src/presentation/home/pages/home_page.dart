@@ -1,30 +1,39 @@
+import 'dart:async';
 import 'package:auto_route/auto_route.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 
-import 'package:core/core.dart';
+import '../../../domain/usecases/drivers_usecase.dart';
+import '../../../domain/usecases/user_usecase.dart';
 import '../bloc/home_bloc.dart';
+import '../widget/home_page_screen.dart';
 import '../widget/widgets.dart';
 
-@RoutePage()
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+part 'home_page_props.dart';
+
+@RoutePage(name: AppRoutes.homeRouteName)
+class HomePage extends StatefulWidget implements AutoRouteWrapper {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
+
+  @override
+  Widget wrappedRoute(BuildContext context) {
+    return BlocProvider<HomeBloc>(
+      create: (context) => HomeBloc(
+        context.read<GetAllDriversUseCase>(),
+        context.read<UserUseCase>(),
+      )..add(const Getuser())..add(const Getdrivers()), // Appeler les événements dès le départ
+      lazy: false,
+      child: this,
+    );
+  }
 }
 
-class _HomePageState extends State<HomePage> {
-  @override
-  void initState() {
-    super.initState();
-    // Appeler l'événement pour charger les utilisateurs
-    context.read<HomeBloc>().add(const Getuser());
-    // Appeler l'événement pour charger les pilotes
-    context.read<HomeBloc>().add(const Getdrivers());
-  }
-
+class _HomePageState extends _HomePageProps {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +41,6 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: secondaryColor,
         title: BlocBuilder<HomeBloc, HomeState>(
           builder: (context, state) {
-            // Afficher le nom de l'utilisateur si disponible
             final userName = state.user.isNotEmpty
                 ? "${state.user[0].first_name} ${state.user[0].last_name}"
                 : "Good morning";
@@ -44,54 +52,18 @@ class _HomePageState extends State<HomePage> {
         ),
         toolbarHeight: 100,
         leading: Padding(
-          padding: const EdgeInsets.only(left:8.0),
+          padding: const EdgeInsets.only(left: 8.0),
           child: CircleAvatar(
             backgroundColor: Colors.white,
-            child: Image.asset("assets/images/Avatar.png",width: 67,height: 67,),
+            child: Image.asset(
+              "assets/images/Avatar.png",
+              width: 67,
+              height: 67,
+            ),
           ),
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Center(
-            child: const Padding(
-              padding: EdgeInsets.all(16.0),
-              child: Text(
-                "Top 10 ranking 2021",
-                style: TextStyle(
-                    fontSize: 22, fontWeight: FontWeight.bold, color: Colors.red),
-              ),
-            ),
-          ),
-          Expanded(
-            child: BlocBuilder<HomeBloc, HomeState>(
-              builder: (context, state) {
-                if (state.status == FormzSubmissionStatus.inProgress) {
-                  return const Center(child: CircularProgressIndicator());
-                } else if (state.status == FormzSubmissionStatus.failure) {
-                  return Center(child: Text("Error: ${state.errorMessage}"));
-                } else if (state.drivers.isNotEmpty) {
-                  return ListView.builder(
-                    itemCount: state.drivers.length,
-                    itemBuilder: (context, index) {
-                      final driver = state.drivers[index];
-                      return PilotCard(
-                        rank: index + 1,
-                        name: "${driver.full_name} ",
-                        team: driver.team_name ?? "Unknown",
-                        image:driver.headshot_url!
-                      );
-                    },
-                  );
-                } else {
-                  return const Center(child: Text("No data available"));
-                }
-              },
-            ),
-          ),
-        ],
-      ),
+      body:HomePageScreen(),
     );
   }
 }

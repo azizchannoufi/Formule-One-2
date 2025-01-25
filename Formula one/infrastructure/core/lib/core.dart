@@ -14,4 +14,6 @@ export 'src/network/network_info.dart';
 
 export 'src/strings/messages.dart';
 
-export 'src/routes/routes.gr.dart';
+export 'src/constants/app_routes.dart';
+
+export 'src/di/interface/base_module.dart';
