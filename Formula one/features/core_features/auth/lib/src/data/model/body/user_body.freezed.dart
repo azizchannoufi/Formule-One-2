@@ -22,12 +22,8 @@ UserBody _$UserBodyFromJson(Map<String, dynamic> json) {
 mixin _$UserBody {
   List<UserB>? get userb => throw _privateConstructorUsedError;
 
-  /// Serializes this UserBody to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of UserBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $UserBodyCopyWith<UserBody> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,8 +46,6 @@ class _$UserBodyCopyWithImpl<$Res, $Val extends UserBody>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of UserBody
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -85,8 +79,6 @@ class __$$UserBodyImplCopyWithImpl<$Res>
       _$UserBodyImpl _value, $Res Function(_$UserBodyImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of UserBody
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -132,14 +124,12 @@ class _$UserBodyImpl implements _UserBody {
             const DeepCollectionEquality().equals(other._userb, _userb));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_userb));
 
-  /// Create a copy of UserBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$UserBodyImplCopyWith<_$UserBodyImpl> get copyWith =>
@@ -161,11 +151,8 @@ abstract class _UserBody implements UserBody {
 
   @override
   List<UserB>? get userb;
-
-  /// Create a copy of UserBody
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$UserBodyImplCopyWith<_$UserBodyImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -179,12 +166,8 @@ mixin _$UserB {
   String? get first_name => throw _privateConstructorUsedError;
   String? get last_name => throw _privateConstructorUsedError;
 
-  /// Serializes this UserB to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of UserB
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $UserBCopyWith<UserB> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -206,8 +189,6 @@ class _$UserBCopyWithImpl<$Res, $Val extends UserB>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of UserB
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -245,8 +226,6 @@ class __$$UserBImplCopyWithImpl<$Res>
       _$UserBImpl _value, $Res Function(_$UserBImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of UserB
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -295,13 +274,11 @@ class _$UserBImpl implements _UserB {
                 other.last_name == last_name));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, first_name, last_name);
 
-  /// Create a copy of UserB
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$UserBImplCopyWith<_$UserBImpl> get copyWith =>
@@ -325,11 +302,8 @@ abstract class _UserB implements UserB {
   String? get first_name;
   @override
   String? get last_name;
-
-  /// Create a copy of UserB
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$UserBImplCopyWith<_$UserBImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

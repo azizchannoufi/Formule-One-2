@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:core/core.dart';
+import 'package:auth/auth.dart';
 
-
-@RoutePage()
+@RoutePage(name: AppRoutes.splashRouteName)
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
@@ -11,7 +11,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // Démarrage du délai
     Future.delayed(const Duration(seconds: 30), () {
-      context.router.replace(const UserInfoRoute());
+      context.router.replace(const AuthRoute());
     });
 
     return Scaffold(

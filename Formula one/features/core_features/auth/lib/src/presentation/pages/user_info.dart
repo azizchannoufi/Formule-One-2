@@ -4,74 +4,59 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import '../../domain/usecases/usercreate_usecase.dart';
 import '../bloc/userinfo_bloc.dart';
+import '../widget/user_info_screen.dart';
 import '../widget/widgets.dart';
 import 'package:core/core.dart';
+
 part 'user_info_props.dart';
 
-@RoutePage()
-class UserInfoPage extends StatefulWidget {
+@RoutePage(name: AppRoutes.authRouteName)
+class UserInfoPage extends StatefulWidget implements AutoRouteWrapper {
   const UserInfoPage({Key? key}) : super(key: key);
 
   @override
-  _UserState createState() => _UserState();
+  State<UserInfoPage> createState() => _UserInfoPageState();
+
+  @override
+  Widget wrappedRoute(BuildContext context) {
+    return BlocProvider<UserinfoBloc>(
+      create: (context) => UserinfoBloc(context.read<UserCreatUseCase>()),
+      lazy: false,
+      child: this,
+    );
+  }
 }
-class _UserState extends UserInfoPageProps{
+
+class _UserInfoPageState extends State<UserInfoPage> {
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => UserinfoBloc(context.read<UserCreatUseCase>()),
-      child: Scaffold(
-        appBar: const UserInfoAppBar(),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child: BlocBuilder<UserinfoBloc, UserinfoState>(
-            builder: (context, state) {
-              // Handling success or failure state inside the builder
-              if (state.status == FormzSubmissionStatus.success) {
-                // Navigate to the home page when the form submission is successful
-                Future.delayed(Duration.zero, () {
-                  context.router.pushNamed('/home');
-                });
-              }
+    return Scaffold(
+      appBar: const UserInfoAppBar(),
+      body: BlocBuilder<UserinfoBloc, UserinfoState>(
+        builder: (context, state) {
+          if (state.status == FormzSubmissionStatus.success) {
+            Future.delayed(Duration.zero, () {
+              context.router.pushNamed('/home');
+            });
+          }
 
-              if (state.status == FormzSubmissionStatus.failure) {
-                // Show an error message if submission fails
-                WidgetsBinding.instance.addPostFrameCallback((_) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text(state.errorMessage ?? 'Erreur inconnue')),
-                  );
-                });
-              }
-
-              return SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    const SizedBox(height: 50),
-                    const LogoSection(),
-                    const SizedBox(height: 30),
-                    const TitleSection(),
-                    const SizedBox(height: 20),
-                    InputFieldsSection(
-                      firstNameController: firstNameController,
-                      lastNameController: lastNameController,
-                    ),
-                    const SizedBox(height: 30),
-                    NextButton(
-                      onPressed: state.isValid
-                          ? () {
-                        context.read<UserinfoBloc>().add(Submit());
-                        context.router.push(HomeRoute());
-                      }
-                          : null,
-                    ),
-                    const SizedBox(height: 20),
-                  ],
-                ),
+          if (state.status == FormzSubmissionStatus.failure) {
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text(state.errorMessage ?? 'Erreur inconnue')),
               );
+            });
+          }
+
+          return UserInfoScreen(
+            firstNameController: TextEditingController(),
+            lastNameController: TextEditingController(),
+            isValid: state.isValid,
+            onSubmit: () {
+              context.read<UserinfoBloc>().add(Submit());
             },
-          ),
-        ),
+          );
+        },
       ),
     );
   }

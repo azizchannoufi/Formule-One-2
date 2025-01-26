@@ -1,8 +1,11 @@
 
+import 'package:auth/auth.dart';
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:core/core.dart';
 import 'package:lists/lists.dart';
+import 'package:splash/splash.dart';
+import 'package:formulaone/src/router/router.gr.dart';
 
 
 @AutoRouterConfig(replaceInRouteName: 'Page|Screen,Route', modules: [
@@ -16,30 +19,23 @@ class AppRouter extends $AppRouter {
   @override
   final List<AutoRoute> routes = [
     AutoRoute(
-      path: '/Splash',
+      path: AppRoutes.splashTabPath,
       page: SplashRoute.page,
       initial: true,
     ),
     AutoRoute(
-      path: 'HomeTab',
-      maintainState: true,
-      initial: true,
-      page: HomeTabRoute.page,
-      children: [
-        AutoRoute(
-            page: HomePageRoute.page,
-            path: AppRoutes.homePagePath,
-            initial: true ),
-      ],
+      path: AppRoutes.authTabPath,
+      page: AuthRoute.page,
+
+    ),
+    AutoRoute(
+      path: AppRoutes.homeTabPath,
+      page: ListRoute.page,
+
     ),
 
     ...HomeRouteModule().routes,
     RedirectRoute(path: '*', redirectTo: '/Splash'),
   ];
 
-  @override
-  Map<String, PageFactory> get pagesMap => {
-    ...AuthRouteModule().pagesMap,
-    ...super.pagesMap,
-  };
 }
