@@ -1,6 +1,5 @@
 library dependencies;
 
-export 'package:dartz/dartz.dart' ;
 export 'package:dio/dio.dart';
 export 'package:freezed_annotation/freezed_annotation.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';

@@ -1,8 +1,8 @@
 class AppRoutes {
-  static const String splashPath = 'Splash';
+  static const String splashPath = '/Splash';
   static const String splashRouteName ='SplashRoute';
 
-  static const String splashTabPath = 'Splash';
+  static const String splashTabPath = '/Splash';
   static const String splashTabRouteName ='SplashRoute';
 
   static const String authPath = '/AuthPath';

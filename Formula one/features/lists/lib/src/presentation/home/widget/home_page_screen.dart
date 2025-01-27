@@ -4,14 +4,16 @@ import 'package:flutter/material.dart';
 import '../bloc/home_bloc.dart';
 import '../widget/widgets.dart';
 import 'package:preferences/preferences.dart';
+
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({super.key});
 
   @override
-  State<HomePageScreen> createState() => _HomePageState();
+  State<HomePageScreen> createState() => _HomePageScreenState();
 }
 
-class _HomePageState extends State<HomePageScreen> {
+class _HomePageScreenState extends State<HomePageScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

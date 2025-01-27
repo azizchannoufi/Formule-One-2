@@ -35,7 +35,7 @@ class AppRouter extends $AppRouter {
     ),
 
     ...HomeRouteModule().routes,
-    RedirectRoute(path: '*', redirectTo: 'Splash'),
+    RedirectRoute(path: '*', redirectTo: '/Splash'),
   ];
 
 }

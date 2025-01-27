@@ -18,20 +18,23 @@ class UserinfoBloc extends Bloc<UserinfoEvent, UserinfoState> {
 
   Future<void>onfirstnameChanged(firstnameChanged event, Emitter<UserinfoState>emit)async{
     final firstname = FirstName.dirty(event.firstname);
+    FormzStatus status = Formz.validate([firstname , state.lastname]);
+
     emit(
       state.copyWith(
         firstname: firstname,
-        isValid: FormzStatus.valid([firstname , state.lastname]),
+        isValid: status.isValid,
       ),
     );
   }
   Future<void>onlastnameChanged(lastnameChanged event, Emitter<UserinfoState>emit)async{
     final lastname = LastName.dirty(event.lastname);
+    FormzStatus status = Formz.validate([lastname , state.firstname]);
     emit(
       state.copyWith(
         lastname: lastname,
-        isValid: FormzStatus.valid([lastname , state.firstname]),
-      ),
+        isValid: status.isValid,
+      )
     );
   }
   Future<void> onSubmit(Submit event, Emitter<UserinfoState> emit) async {

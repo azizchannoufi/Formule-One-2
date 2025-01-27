@@ -1,4 +1,4 @@
-import 'package:dependencies/dependencies.dart';
+import 'package:dartz/dartz.dart';
 import '../../errors/failure.dart';
 
 // Classe abstraite représentant un cas d'utilisation
