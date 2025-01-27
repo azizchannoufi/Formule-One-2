@@ -21,7 +21,7 @@ class UserinfoBloc extends Bloc<UserinfoEvent, UserinfoState> {
     emit(
       state.copyWith(
         firstname: firstname,
-        isValid: Formz.validate([firstname , state.lastname]),
+        isValid: FormzStatus.valid([firstname , state.lastname]),
       ),
     );
   }
@@ -30,17 +30,17 @@ class UserinfoBloc extends Bloc<UserinfoEvent, UserinfoState> {
     emit(
       state.copyWith(
         lastname: lastname,
-        isValid: Formz.validate([lastname , state.firstname]),
+        isValid: FormzStatus.valid([lastname , state.firstname]),
       ),
     );
   }
   Future<void> onSubmit(Submit event, Emitter<UserinfoState> emit) async {
     if (!state.isValid) {
-      emit(state.copyWith(status: FormzSubmissionStatus.failure));
+      emit(state.copyWith(status: FormzStatus.submissionFailure));
       return;
     }
 
-    emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
+    emit(state.copyWith(status: FormzStatus.submissionInProgress));
 
     try {
       // Appel au cas d'utilisation pour créer l'utilisateur
@@ -54,19 +54,19 @@ class UserinfoBloc extends Bloc<UserinfoEvent, UserinfoState> {
       result.fold(
             (failure) {
           emit(state.copyWith(
-            status: FormzSubmissionStatus.failure,
+            status: FormzStatus.submissionFailure,
             errorMessage: failure.message, // Affiche un message d'erreur
           ));
         },
             (success) {
           emit(state.copyWith(
-            status: FormzSubmissionStatus.success,
+            status: FormzStatus.submissionInProgress,
           ));
         },
       );
     } catch (e) {
       emit(state.copyWith(
-        status: FormzSubmissionStatus.failure,
+        status: FormzStatus.submissionFailure,
         errorMessage: e.toString(), // Affiche l'erreur si inattendue
       ));
     }

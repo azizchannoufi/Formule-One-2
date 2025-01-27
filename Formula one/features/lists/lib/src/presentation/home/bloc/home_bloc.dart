@@ -20,16 +20,16 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<Getuser>(onGetuser);
     }
   Future<void>onGetdrivers(Getdrivers event, Emitter<HomeState> emit)async{
-    emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
+    emit(state.copyWith(status: FormzStatus.submissionInProgress));
     final allDrivers= await getAllDriversUseCase.call(NoParams());
     allDrivers.fold((failure){
       emit(state.copyWith(
-        status: FormzSubmissionStatus.failure,
+        status: FormzStatus.submissionFailure,
         errorMessage: "Error: $failure",
       ));
     },  (success) {
       emit(state.copyWith(
-        status: FormzSubmissionStatus.success,
+        status: FormzStatus.submissionSuccess,
         errorMessage: "",
         drivers: success.drivers ?? [],
       ));
@@ -37,16 +37,16 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       );
   }
   Future<void>onGetuser(Getuser event, Emitter<HomeState> emit)async{
-    emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
+    emit(state.copyWith(status: FormzStatus.submissionInProgress));
     final allDrivers= await userUseCase.call(NoParams());
     allDrivers.fold((failure){
       emit(state.copyWith(
-        status: FormzSubmissionStatus.failure,
+        status: FormzStatus.submissionFailure,
         errorMessage: "Error: $failure",
       ));
     },  (success) {
       emit(state.copyWith(
-        status: FormzSubmissionStatus.success,
+        status: FormzStatus.submissionSuccess,
         errorMessage: "",
         user: success.userr ?? [],
       ));

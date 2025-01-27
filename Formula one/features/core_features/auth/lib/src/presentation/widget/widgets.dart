@@ -131,7 +131,7 @@ class NextButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
           ),
-          child: state.status == FormzSubmissionStatus.inProgress
+          child: state.status == FormzStatus.submissionInProgress
               ? const CircularProgressIndicator(color: Colors.white)
               : const Text(
             "NEXT",

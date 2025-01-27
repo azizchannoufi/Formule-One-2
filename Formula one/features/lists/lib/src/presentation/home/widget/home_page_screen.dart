@@ -19,9 +19,9 @@ class _HomePageState extends State<HomePageScreen> {
         listener: (context, state) {
         },
         builder: (context, state) {
-          if (state.status == FormzSubmissionStatus.inProgress) {
+          if (state.status == FormzStatus.submissionInProgress) {
             return const Center(child: CircularProgressIndicator());
-          } else if (state.status == FormzSubmissionStatus.failure) {
+          } else if (state.status == FormzStatus.submissionFailure) {
             return Center(child: Text("Error: ${state.errorMessage}"));
           } else {
             return Column(

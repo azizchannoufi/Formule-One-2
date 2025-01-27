@@ -5,6 +5,8 @@ import '../bloc/userinfo_bloc.dart';
 import '../widget/user_info_screen.dart';
 import 'package:core/core.dart';
 
+import '../widget/widgets.dart';
+
 part 'user_info_props.dart';
 
 @RoutePage(name: AppRoutes.authRouteName)
@@ -31,13 +33,13 @@ class _UserInfoPageState extends State<UserInfoPage> {
       appBar: const UserInfoAppBar(),
       body: BlocBuilder<UserinfoBloc, UserinfoState>(
         builder: (context, state) {
-          if (state.status == FormzSubmissionStatus.success) {
+          if (state.status == FormzStatus.submissionSuccess) {
             Future.delayed(Duration.zero, () {
               context.router.pushNamed('/home');
             });
           }
 
-          if (state.status == FormzSubmissionStatus.failure) {
+          if (state.status == FormzStatus.submissionFailure) {
             WidgetsBinding.instance.addPostFrameCallback((_) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text(state.errorMessage ?? 'Erreur inconnue')),

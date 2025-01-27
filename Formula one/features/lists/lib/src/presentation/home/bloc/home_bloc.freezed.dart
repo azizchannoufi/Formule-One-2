@@ -71,9 +71,6 @@ class _$HomeEventCopyWithImpl<$Res, $Val extends HomeEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of HomeEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -90,9 +87,6 @@ class __$$GetdriversImplCopyWithImpl<$Res>
   __$$GetdriversImplCopyWithImpl(
       _$GetdriversImpl _value, $Res Function(_$GetdriversImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of HomeEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -195,9 +189,6 @@ class __$$GetuserImplCopyWithImpl<$Res>
   __$$GetuserImplCopyWithImpl(
       _$GetuserImpl _value, $Res Function(_$GetuserImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of HomeEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -288,14 +279,12 @@ abstract class Getuser implements HomeEvent {
 
 /// @nodoc
 mixin _$HomeState {
-  FormzSubmissionStatus get status => throw _privateConstructorUsedError;
+  FormzStatus get status => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
   List<UserR> get user => throw _privateConstructorUsedError;
   List<Driver> get drivers => throw _privateConstructorUsedError;
 
-  /// Create a copy of HomeState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $HomeStateCopyWith<HomeState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -306,7 +295,7 @@ abstract class $HomeStateCopyWith<$Res> {
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
   $Res call(
-      {FormzSubmissionStatus status,
+      {FormzStatus status,
       String? errorMessage,
       List<UserR> user,
       List<Driver> drivers});
@@ -322,8 +311,6 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of HomeState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -336,7 +323,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as FormzSubmissionStatus,
+              as FormzStatus,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -362,7 +349,7 @@ abstract class _$$HomeStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {FormzSubmissionStatus status,
+      {FormzStatus status,
       String? errorMessage,
       List<UserR> user,
       List<Driver> drivers});
@@ -376,8 +363,6 @@ class __$$HomeStateImplCopyWithImpl<$Res>
       _$HomeStateImpl _value, $Res Function(_$HomeStateImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of HomeState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -390,7 +375,7 @@ class __$$HomeStateImplCopyWithImpl<$Res>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as FormzSubmissionStatus,
+              as FormzStatus,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -419,7 +404,7 @@ class _$HomeStateImpl implements _HomeState {
         _drivers = drivers;
 
   @override
-  final FormzSubmissionStatus status;
+  final FormzStatus status;
   @override
   final String? errorMessage;
   final List<UserR> _user;
@@ -463,9 +448,7 @@ class _$HomeStateImpl implements _HomeState {
       const DeepCollectionEquality().hash(_user),
       const DeepCollectionEquality().hash(_drivers));
 
-  /// Create a copy of HomeState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>
@@ -474,24 +457,21 @@ class _$HomeStateImpl implements _HomeState {
 
 abstract class _HomeState implements HomeState {
   factory _HomeState(
-      {required final FormzSubmissionStatus status,
+      {required final FormzStatus status,
       final String? errorMessage,
       required final List<UserR> user,
       required final List<Driver> drivers}) = _$HomeStateImpl;
 
   @override
-  FormzSubmissionStatus get status;
+  FormzStatus get status;
   @override
   String? get errorMessage;
   @override
   List<UserR> get user;
   @override
   List<Driver> get drivers;
-
-  /// Create a copy of HomeState
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

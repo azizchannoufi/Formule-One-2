@@ -476,7 +476,7 @@ mixin _$UserinfoState {
   FirstName get firstname => throw _privateConstructorUsedError;
   LastName get lastname => throw _privateConstructorUsedError;
   bool get isValid => throw _privateConstructorUsedError;
-  FormzSubmissionStatus get status => throw _privateConstructorUsedError;
+  FormzStatus get status => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -494,7 +494,7 @@ abstract class $UserinfoStateCopyWith<$Res> {
       {FirstName firstname,
       LastName lastname,
       bool isValid,
-      FormzSubmissionStatus status,
+      FormzStatus status,
       String? errorMessage});
 }
 
@@ -533,7 +533,7 @@ class _$UserinfoStateCopyWithImpl<$Res, $Val extends UserinfoState>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as FormzSubmissionStatus,
+              as FormzStatus,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -554,7 +554,7 @@ abstract class _$$UserinfoStateImplCopyWith<$Res>
       {FirstName firstname,
       LastName lastname,
       bool isValid,
-      FormzSubmissionStatus status,
+      FormzStatus status,
       String? errorMessage});
 }
 
@@ -591,7 +591,7 @@ class __$$UserinfoStateImplCopyWithImpl<$Res>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as FormzSubmissionStatus,
+              as FormzStatus,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -617,7 +617,7 @@ class _$UserinfoStateImpl implements _UserinfoState {
   @override
   final bool isValid;
   @override
-  final FormzSubmissionStatus status;
+  final FormzStatus status;
   @override
   final String? errorMessage;
 
@@ -657,7 +657,7 @@ abstract class _UserinfoState implements UserinfoState {
       {required final FirstName firstname,
       required final LastName lastname,
       required final bool isValid,
-      required final FormzSubmissionStatus status,
+      required final FormzStatus status,
       required final String? errorMessage}) = _$UserinfoStateImpl;
 
   @override
@@ -667,7 +667,7 @@ abstract class _UserinfoState implements UserinfoState {
   @override
   bool get isValid;
   @override
-  FormzSubmissionStatus get status;
+  FormzStatus get status;
   @override
   String? get errorMessage;
   @override

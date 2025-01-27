@@ -22,12 +22,8 @@ UserResponse _$UserResponseFromJson(Map<String, dynamic> json) {
 mixin _$UserResponse {
   List<UserR>? get userr => throw _privateConstructorUsedError;
 
-  /// Serializes this UserResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of UserResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $UserResponseCopyWith<UserResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -51,8 +47,6 @@ class _$UserResponseCopyWithImpl<$Res, $Val extends UserResponse>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of UserResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,8 +80,6 @@ class __$$UserResponseImplCopyWithImpl<$Res>
       _$UserResponseImpl _value, $Res Function(_$UserResponseImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of UserResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -133,14 +125,12 @@ class _$UserResponseImpl implements _UserResponse {
             const DeepCollectionEquality().equals(other._userr, _userr));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_userr));
 
-  /// Create a copy of UserResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$UserResponseImplCopyWith<_$UserResponseImpl> get copyWith =>
@@ -162,11 +152,8 @@ abstract class _UserResponse implements UserResponse {
 
   @override
   List<UserR>? get userr;
-
-  /// Create a copy of UserResponse
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$UserResponseImplCopyWith<_$UserResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -180,12 +167,8 @@ mixin _$UserR {
   String? get first_name => throw _privateConstructorUsedError;
   String? get last_name => throw _privateConstructorUsedError;
 
-  /// Serializes this UserR to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of UserR
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $UserRCopyWith<UserR> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -207,8 +190,6 @@ class _$UserRCopyWithImpl<$Res, $Val extends UserR>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of UserR
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -246,8 +227,6 @@ class __$$UserRImplCopyWithImpl<$Res>
       _$UserRImpl _value, $Res Function(_$UserRImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of UserR
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -296,13 +275,11 @@ class _$UserRImpl implements _UserR {
                 other.last_name == last_name));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, first_name, last_name);
 
-  /// Create a copy of UserR
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$UserRImplCopyWith<_$UserRImpl> get copyWith =>
@@ -326,11 +303,8 @@ abstract class _UserR implements UserR {
   String? get first_name;
   @override
   String? get last_name;
-
-  /// Create a copy of UserR
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$UserRImplCopyWith<_$UserRImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

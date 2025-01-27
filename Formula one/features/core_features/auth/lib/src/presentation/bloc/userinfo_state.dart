@@ -6,7 +6,7 @@ class UserinfoState  with _$UserinfoState{
     required FirstName firstname,
     required LastName lastname,
     required bool isValid,
-    required FormzSubmissionStatus status,
+    required FormzStatus status,
     required String? errorMessage,
 
   }) = _UserinfoState;
@@ -15,7 +15,7 @@ class UserinfoState  with _$UserinfoState{
     firstname: FirstName.pure(),
     lastname: LastName.pure(),
     isValid: false,
-    status: FormzSubmissionStatus.initial,
+    status: FormzStatus.pure,
     errorMessage: "",
   );
 }

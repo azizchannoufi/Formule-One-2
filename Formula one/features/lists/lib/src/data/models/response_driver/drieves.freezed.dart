@@ -22,12 +22,8 @@ DriverResponse _$DriverResponseFromJson(Map<String, dynamic> json) {
 mixin _$DriverResponse {
   List<Driver>? get drivers => throw _privateConstructorUsedError;
 
-  /// Serializes this DriverResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of DriverResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $DriverResponseCopyWith<DriverResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -51,8 +47,6 @@ class _$DriverResponseCopyWithImpl<$Res, $Val extends DriverResponse>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of DriverResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,8 +80,6 @@ class __$$DriverResponseImplCopyWithImpl<$Res>
       _$DriverResponseImpl _value, $Res Function(_$DriverResponseImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of DriverResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -134,14 +126,12 @@ class _$DriverResponseImpl implements _DriverResponse {
             const DeepCollectionEquality().equals(other._drivers, _drivers));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_drivers));
 
-  /// Create a copy of DriverResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$DriverResponseImplCopyWith<_$DriverResponseImpl> get copyWith =>
@@ -165,11 +155,8 @@ abstract class _DriverResponse implements DriverResponse {
 
   @override
   List<Driver>? get drivers;
-
-  /// Create a copy of DriverResponse
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$DriverResponseImplCopyWith<_$DriverResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -184,12 +171,8 @@ mixin _$Driver {
   String? get headshot_url => throw _privateConstructorUsedError;
   String? get team_name => throw _privateConstructorUsedError;
 
-  /// Serializes this Driver to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Driver
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $DriverCopyWith<Driver> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -211,8 +194,6 @@ class _$DriverCopyWithImpl<$Res, $Val extends Driver>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of Driver
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -255,8 +236,6 @@ class __$$DriverImplCopyWithImpl<$Res>
       _$DriverImpl _value, $Res Function(_$DriverImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of Driver
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -314,14 +293,12 @@ class _$DriverImpl implements _Driver {
                 other.team_name == team_name));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, full_name, headshot_url, team_name);
 
-  /// Create a copy of Driver
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$DriverImplCopyWith<_$DriverImpl> get copyWith =>
@@ -349,11 +326,8 @@ abstract class _Driver implements Driver {
   String? get headshot_url;
   @override
   String? get team_name;
-
-  /// Create a copy of Driver
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$DriverImplCopyWith<_$DriverImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
