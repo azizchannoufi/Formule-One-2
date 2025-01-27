@@ -41,7 +41,7 @@ packages:
     source: path
     version: "1.0.0+1"
   auto_route:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: auto_route
       sha256: "2286341d74c20525e852c43a14062a4042faeb055ea08b82bb6ac107f8250897"
@@ -57,7 +57,7 @@ packages:
     source: hosted
     version: "7.3.2"
   bloc:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: bloc
       sha256: "106842ad6569f0b60297619e9e0b1885c2fb9bf84812935490e6c5275777804e"
@@ -223,6 +223,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.10.1"
+  dependencies:
+    dependency: "direct main"
+    description:
+      path: "../../infrastructure/dependencies"
+      relative: true
+    source: path
+    version: "1.0.0+1"
   dio:
     dependency: "direct main"
     description:
@@ -285,7 +292,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_bloc:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: flutter_bloc
       sha256: b594505eac31a0518bdcb4b5b79573b8d9117b193cc80cc12e17d639b10aa27a
@@ -311,15 +318,15 @@ packages:
     source: sdk
     version: "0.0.0"
   formz:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: formz
-      sha256: a58eb48d84685b7ffafac1d143bf47d585bf54c7db89fe81c175dfd6e53201c7
+      sha256: ed92f501f4a44b1da9137a025007df773b3732147b413c464158ecd997612ab6
       url: "https://pub.dev"
     source: hosted
-    version: "0.7.0"
+    version: "0.4.1"
   freezed:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: freezed
       sha256: a434911f643466d78462625df76fd9eb13e57348ff43fe1f77bbe909522c67a1
@@ -343,13 +350,13 @@ packages:
     source: hosted
     version: "4.0.0"
   get_it:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: get_it
-      sha256: f126a3e286b7f5b578bf436d5592968706c4c1de28a228b870ce375d9f743103
+      sha256: e6017ce7fdeaf218dc51a100344d8cb70134b80e28b760f8bb23c242437bafd7
       url: "https://pub.dev"
     source: hosted
-    version: "8.0.3"
+    version: "7.6.7"
   glob:
     dependency: transitive
     description:
@@ -542,6 +549,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.5.1"
+  preferences:
+    dependency: "direct main"
+    description:
+      path: "../../infrastructure/preferences"
+      relative: true
+    source: path
+    version: "1.0.0+1"
   provider:
     dependency: transitive
     description:

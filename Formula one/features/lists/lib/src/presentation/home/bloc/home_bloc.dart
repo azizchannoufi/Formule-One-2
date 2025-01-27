@@ -1,9 +1,7 @@
-import 'package:bloc/bloc.dart';
-import 'package:formz/formz.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:meta/meta.dart';
 
 import 'package:core/core.dart';
+import 'package:dependencies/dependencies.dart';
+
 import '../../../data/models/response_driver/drieves.dart';
 import '../../../data/models/response_user/user_response.dart';
 import '../../../domain/usecases/drivers_usecase.dart';

@@ -1,7 +1,8 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:core/core.dart';
 import 'package:auth/auth.dart';
+import 'package:dependencies/dependencies.dart';
+import 'package:preferences/preferences.dart';
 
 @RoutePage(name: AppRoutes.splashRouteName)
 class SplashScreen extends StatelessWidget {
@@ -25,7 +26,7 @@ class SplashScreen extends StatelessWidget {
         ),
         child: Center(
           child: Image.asset(
-            'assets/images/f1_logo.png', // Chemin de l'image
+            FoundationAssets.f1_logo, // Chemin de l'image
             width: 200,
             height: 200,
           ),

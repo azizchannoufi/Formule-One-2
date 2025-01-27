@@ -3,14 +3,12 @@ import 'package:auto_route/auto_route.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:formz/formz.dart';
 
 import '../../../domain/usecases/drivers_usecase.dart';
 import '../../../domain/usecases/user_usecase.dart';
 import '../bloc/home_bloc.dart';
 import '../widget/home_page_screen.dart';
-import '../widget/widgets.dart';
-
+import 'package:preferences/preferences.dart';
 part 'home_page_props.dart';
 
 @RoutePage(name: AppRoutes.homeRouteName)
@@ -56,7 +54,7 @@ class _HomePageState extends _HomePageProps {
           child: CircleAvatar(
             backgroundColor: Colors.white,
             child: Image.asset(
-              "assets/images/Avatar.png",
+              FoundationAssets.Avatar,
               width: 67,
               height: 67,
             ),

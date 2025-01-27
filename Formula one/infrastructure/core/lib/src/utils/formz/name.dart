@@ -1,4 +1,4 @@
-import 'package:formz/formz.dart';
+import 'package:dependencies/dependencies.dart';
 enum NameValidationError { invalid }
 
 class FirstName extends FormzInput<String, NameValidationError> {

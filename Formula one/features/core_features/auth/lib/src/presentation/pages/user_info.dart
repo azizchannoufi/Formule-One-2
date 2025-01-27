@@ -1,11 +1,8 @@
-import 'package:auto_route/auto_route.dart';
+import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:formz/formz.dart';
 import '../../domain/usecases/usercreate_usecase.dart';
 import '../bloc/userinfo_bloc.dart';
 import '../widget/user_info_screen.dart';
-import '../widget/widgets.dart';
 import 'package:core/core.dart';
 
 part 'user_info_props.dart';

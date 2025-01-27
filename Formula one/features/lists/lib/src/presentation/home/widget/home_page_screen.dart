@@ -1,12 +1,9 @@
-import 'package:auto_route/auto_route.dart';
+import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:formz/formz.dart';
 
-import 'package:core/core.dart';
 import '../bloc/home_bloc.dart';
 import '../widget/widgets.dart';
-
+import 'package:preferences/preferences.dart';
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({super.key});
 
@@ -38,7 +35,7 @@ class _HomePageState extends State<HomePageScreen> {
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
-                        color: Colors.red,
+                        color: FoundationColors.primaryColor,
                       ),
                     ),
                   ),

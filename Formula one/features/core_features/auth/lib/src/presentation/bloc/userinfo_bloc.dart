@@ -1,11 +1,8 @@
-import "package:bloc/bloc.dart";
-import 'package:formz/formz.dart';
 import 'package:meta/meta.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import '../../data/model/body/user_body.dart';
 import '../../domain/usecases/usercreate_usecase.dart';
 import 'package:core/core.dart';
-
+import 'package:dependencies/dependencies.dart';
 part 'userinfo_event.dart';
 part 'userinfo_state.dart';
 part 'userinfo_bloc.freezed.dart';

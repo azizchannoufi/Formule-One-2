@@ -30,11 +30,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  equatable:
-  internet_connection_checker:
-  dartz:
-  formz:
-  auto_route:
+  dependencies:
+    path: ../../infrastructure/dependencies
   auth:
     path: ../../features/core_features/auth
   lists:
@@ -49,7 +46,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^2.4.9
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

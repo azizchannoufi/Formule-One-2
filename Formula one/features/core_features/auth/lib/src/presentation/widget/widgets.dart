@@ -1,8 +1,7 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:formz/formz.dart';
-
+import 'package:dependencies/dependencies.dart';
+import 'package:preferences/preferences.dart';
 import '../bloc/userinfo_bloc.dart';
 
 // AppBar personnalisée
@@ -30,7 +29,7 @@ class LogoSection extends StatelessWidget {
     return Column(
       children: [
         Image.asset(
-          'assets/images/F1logo.png', // Remplacez par le chemin de votre image
+          FoundationAssets.F1logo, // Remplacez par le chemin de votre image
           width: 100,
           height: 100,
         ),

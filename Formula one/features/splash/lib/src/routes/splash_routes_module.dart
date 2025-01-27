@@ -1,6 +1,6 @@
 import 'package:core/core.dart';
 import 'splash_routes_module.gm.dart';
-import 'package:auto_route/auto_route.dart';
+import 'package:dependencies/dependencies.dart';
 
 @AutoRouterConfig.module()
 class SplashRouteModule extends $SplashRouteModule{

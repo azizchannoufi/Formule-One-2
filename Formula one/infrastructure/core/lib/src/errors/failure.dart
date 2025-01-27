@@ -1,5 +1,4 @@
-import 'package:equatable/equatable.dart';
-
+import 'package:dependencies/dependencies.dart';
 // Classe représentant les différentes erreurs possibles
 class   Failure extends Equatable {
   // Message d'erreur
