@@ -18,23 +18,9 @@ class AppRouter extends $AppRouter {
   RouteType get defaultRouteType => const RouteType.material();
   @override
   final List<AutoRoute> routes = [
-    AutoRoute(
-      path: AppRoutes.splashTabPath,
-      page: SplashRoute.page,
-      initial: true,
-    ),
-    AutoRoute(
-      path: AppRoutes.authTabPath,
-      page: AuthRoute.page,
-
-    ),
-    AutoRoute(
-      path: AppRoutes.homeTabPath,
-      page: ListRoute.page,
-
-    ),
-
+    ...UserInfoRouteModule().routes,
     ...HomeRouteModule().routes,
+    ...SplashRouteModule().routes,
     RedirectRoute(path: '*', redirectTo: '/Splash'),
   ];
 

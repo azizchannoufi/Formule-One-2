@@ -6,7 +6,11 @@ import 'package:dependencies/dependencies.dart';
 class SplashRouteModule extends $SplashRouteModule{
 // routes shouldn't be defined here
   final List<AutoRoute> routes = [
-
+    AutoRoute(
+      path: AppRoutes.splashTabPath,
+      page: SplashRoute.page,
+      initial: true,
+    ),
   ];
 }
 @RoutePage(name: AppRoutes.splashTabRouteName)

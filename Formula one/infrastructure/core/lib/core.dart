@@ -1,5 +1,4 @@
 library core;
-export 'src/app_theme.dart';
 
 export 'src/utils/formz/name.dart';
 export 'src/utils/usecase/use_case.dart';
@@ -12,7 +11,6 @@ export 'src/errors/exeption.dart';
 
 export 'src/network/network_info.dart';
 
-export 'src/strings/messages.dart';
 
 export 'src/constants/app_routes.dart';
 

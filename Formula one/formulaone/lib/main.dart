@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:formulaone/src/router/router.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+import 'src/super_app.dart';
 
-  @override
-  Widget build(BuildContext context) {
-    final appRouter = AppRouter();
+void main() {
+  // Initialise l'application Flutter
+  WidgetsFlutterBinding.ensureInitialized();
 
-    return MaterialApp.router(
-        routerDelegate: appRouter.delegate(),
-        routeInformationParser: appRouter.defaultRouteParser()
-    );
-  }
+  // Démarre l'application avec la classe MyApp
+  runApp(const MyApp());
 }

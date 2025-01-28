@@ -6,7 +6,10 @@ import 'user_info_routes_module.gm.dart';
 class UserInfoRouteModule extends $UserInfoRouteModule{
 // routes shouldn't be defined here
   final List<AutoRoute> routes = [
-
+    AutoRoute(
+      path: AppRoutes.authTabPath,
+      page: AuthRoute.page,
+    ),
   ];
 }
 @RoutePage(name: AppRoutes.authTabRouteName)

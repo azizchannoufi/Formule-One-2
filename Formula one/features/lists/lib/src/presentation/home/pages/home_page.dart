@@ -36,7 +36,7 @@ class _HomePageState extends _HomePageProps {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: secondaryColor,
+        backgroundColor: FoundationColors.secondaryColor,
         title: BlocBuilder<HomeBloc, HomeState>(
           builder: (context, state) {
             final userName = state.user.isNotEmpty

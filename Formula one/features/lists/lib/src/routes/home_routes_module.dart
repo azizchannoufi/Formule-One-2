@@ -5,7 +5,10 @@ import 'home_routes_module.gm.dart';
 class HomeRouteModule extends $HomeRouteModule{
 // routes shouldn't be defined here
   final List<AutoRoute> routes = [
-
+    AutoRoute(
+      path: AppRoutes.homeTabPath,
+      page: ListRoute.page,
+    ),
   ];
 }
 
