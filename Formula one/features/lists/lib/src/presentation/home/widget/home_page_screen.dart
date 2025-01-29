@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../bloc/home_bloc.dart';
 import '../widget/widgets.dart';
 import 'package:preferences/preferences.dart';
-
+import 'package:l10n/l10n.dart';
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({super.key});
 
@@ -30,10 +30,10 @@ class _HomePageScreenState extends State<HomePageScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Center(
-                  child: const Padding(
+                  child:  Padding(
                     padding: EdgeInsets.all(16.0),
                     child: Text(
-                      "Top 10 ranking 2021",
+                      S.current.top_10,
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,

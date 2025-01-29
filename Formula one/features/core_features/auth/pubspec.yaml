@@ -16,7 +16,8 @@ dependencies:
     path: ../../../infrastructure/dependencies
   preferences:
     path: ../../../infrastructure/preferences
-
+  l10n:
+    path: ../../../infrastructure/l10n
 
 flutter:
   assets:

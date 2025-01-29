@@ -9,6 +9,8 @@ import '../../../domain/usecases/user_usecase.dart';
 import '../bloc/home_bloc.dart';
 import '../widget/home_page_screen.dart';
 import 'package:preferences/preferences.dart';
+import 'package:l10n/l10n.dart';
+
 part 'home_page_props.dart';
 
 @RoutePage(name: AppRoutes.homeRouteName)
@@ -41,9 +43,9 @@ class _HomePageState extends _HomePageProps {
           builder: (context, state) {
             final userName = state.user.isNotEmpty
                 ? "${state.user[0].first_name} ${state.user[0].last_name}"
-                : "Good morning";
+                : S.current.good_morning;
             return Text(
-              "Good morning,\n$userName",
+              "${S.current.good_morning}\n$userName",
               style: const TextStyle(color: Colors.white, fontSize: 20),
             );
           },

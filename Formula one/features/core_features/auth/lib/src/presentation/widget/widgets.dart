@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dependencies/dependencies.dart';
 import 'package:preferences/preferences.dart';
 import '../bloc/userinfo_bloc.dart';
-
+import 'package:l10n/l10n.dart';
 // AppBar personnalisée
 class UserInfoAppBar extends StatelessWidget implements PreferredSizeWidget {
   const UserInfoAppBar({Key? key}) : super(key: key);
@@ -45,9 +45,9 @@ class TitleSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const [
+      children:  [
         Text(
-          "Let's Get Familiar",
+          S.current.lets_get_familiar,
           style: TextStyle(
             fontSize: 22,
             fontWeight: FontWeight.bold,
@@ -55,7 +55,7 @@ class TitleSection extends StatelessWidget {
         ),
         SizedBox(height: 10),
         Text(
-          "Introduce Yourself",
+          S.current.intoduce_yourself,
           style: TextStyle(
             fontSize: 16,
             color: Colors.grey,
@@ -85,7 +85,7 @@ class InputFieldsSection extends StatelessWidget {
         TextField(
           controller: firstNameController,
           decoration: InputDecoration(
-            labelText: 'First name',
+            labelText: S.current.first_name,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
             ),
@@ -98,7 +98,7 @@ class InputFieldsSection extends StatelessWidget {
         TextField(
           controller: lastNameController,
           decoration: InputDecoration(
-            labelText: 'Last name',
+            labelText:S.current.last_name ,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
             ),
@@ -133,8 +133,9 @@ class NextButton extends StatelessWidget {
           ),
           child: state.status == FormzStatus.submissionInProgress
               ? const CircularProgressIndicator(color: Colors.white)
-              : const Text(
-            "NEXT",
+              :  Text(
+            S.current.next
+              ,
             style: TextStyle(
               fontSize: 16,
               color: Colors.white,
