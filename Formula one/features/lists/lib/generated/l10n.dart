@@ -50,56 +50,6 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Let’s Get Familiar`
-  String get lets_get_familiar {
-    return Intl.message(
-      'Let’s Get Familiar',
-      name: 'lets_get_familiar',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Introduce Yourself`
-  String get intoduce_yourself {
-    return Intl.message(
-      'Introduce Yourself',
-      name: 'intoduce_yourself',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `First name`
-  String get first_name {
-    return Intl.message(
-      'First name',
-      name: 'first_name',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Last name`
-  String get last_name {
-    return Intl.message(
-      'Last name',
-      name: 'last_name',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Next`
-  String get next {
-    return Intl.message(
-      'Next',
-      name: 'next',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Good morning,`
   String get good_morning {
     return Intl.message(
@@ -119,6 +69,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Let’s Get Familiar`
+  String get lets_get_familiar {
+    return Intl.message(
+      'Let’s Get Familiar',
+      name: 'lets_get_familiar',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -127,7 +87,6 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
-      Locale.fromSubtags(languageCode: 'fr'),
     ];
   }
 

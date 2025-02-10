@@ -4,12 +4,12 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../generated/l10n.dart';
 import '../../../domain/usecases/drivers_usecase.dart';
 import '../../../domain/usecases/user_usecase.dart';
 import '../bloc/home_bloc.dart';
 import '../widget/home_page_screen.dart';
 import 'package:preferences/preferences.dart';
-import 'package:l10n/l10n.dart';
 
 part 'home_page_props.dart';
 

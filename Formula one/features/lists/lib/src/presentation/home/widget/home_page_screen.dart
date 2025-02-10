@@ -1,10 +1,10 @@
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../generated/l10n.dart';
 import '../bloc/home_bloc.dart';
 import '../widget/widgets.dart';
 import 'package:preferences/preferences.dart';
-import 'package:l10n/l10n.dart';
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({super.key});
 

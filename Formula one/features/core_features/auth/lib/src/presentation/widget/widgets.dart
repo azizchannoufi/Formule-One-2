@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dependencies/dependencies.dart';
 import 'package:preferences/preferences.dart';
+import '../../../generated/l10n.dart';
 import '../bloc/userinfo_bloc.dart';
-import 'package:l10n/l10n.dart';
 // AppBar personnalisée
 class UserInfoAppBar extends StatelessWidget implements PreferredSizeWidget {
   const UserInfoAppBar({Key? key}) : super(key: key);
